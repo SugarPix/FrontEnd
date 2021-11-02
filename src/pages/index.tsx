@@ -12,7 +12,6 @@ export default function Home(): JSX.Element {
       <Head>
         <title>Home | SugarPix</title>
       </Head>
-      <h1>SUGARPIX</h1>
     </div>
   );
 }
