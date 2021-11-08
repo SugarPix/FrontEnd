@@ -75,5 +75,5 @@ export const Container = styled.header`
 export const Logo = styled.img`
   width: 8rem;
   height: 3rem;
-  object-fit: cover;
+  object-fit: contain;
 `;

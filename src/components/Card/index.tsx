@@ -7,28 +7,29 @@ import { IoLogoInstagram } from "react-icons/io";
 import { Container } from "./styles";
 
 interface CardProps {
-  id: number;
   picture: string;
   name: string;
   insta: string;
   description: string;
   pix: string;
+  style?: Object;
+  isOpen?: boolean;
 }
 
 export function Card({
-  id,
   name,
   insta,
   description,
   pix,
   picture,
+  style = {},
+  isOpen = false,
 }: CardProps) {
-  const [showBio, setShowBio] = useState(false);
+  const [showBio, setShowBio] = useState(isOpen);
 
   return (
     <Container
-      key={id}
-      style={{ paddingBottom: showBio ? "2.5rem" : "0.75rem" }}
+      style={{ paddingBottom: showBio ? "2.5rem" : "0.75rem", ...style }}
     >
       <div className="pix-header">
         <img src={picture} alt={name} />

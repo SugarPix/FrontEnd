@@ -8,7 +8,7 @@ export function Header() {
       <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
         <Navbar.Brand href="/">
           <Logo
-            src="/static/images/logo_nome.png"
+            src="/static/images/logo_nome.svg"
             className="logoImg"
             alt="SUGARPIX"
           />

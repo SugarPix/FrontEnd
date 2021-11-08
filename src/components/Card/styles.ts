@@ -46,7 +46,9 @@ export const Container = styled.div`
     }
 
     img {
-      width: 25%;
+      width: 8.375rem;
+      height: 8.375rem;
+      object-fit: cover;
       border-radius: 50%;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -103,7 +105,8 @@ export const Container = styled.div`
       }
 
       img {
-        width: 40%;
+        width: 7rem;
+        height: 7rem;
       }
 
       div {
