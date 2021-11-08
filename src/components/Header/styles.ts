@@ -14,19 +14,31 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
 
-    width: 100%;
-    padding: 1rem;
-    width: 100%;
+    width: 90%;
     max-width: 750px;
+    padding: 2rem 0;
 
     .navbar-nav a {
       text-align: right;
       color: var(--gray);
+      padding: 0 !important;
     }
 
-    .navbar-collapse {
-      @media (max-width: 992px) {
+    .navbar-nav {
+      @media (min-width: 992px) {
+        a + a {
+          margin-left: 1.5vw;
+        }
+      }
+    }
+
+    @media (max-width: 992px) {
+      .navbar-collapse {
         margin-top: 2vw;
+      }
+
+      .navbar-nav a {
+        margin-top: 3vw;
       }
     }
   }
@@ -62,6 +74,6 @@ export const Container = styled.header`
 
 export const Logo = styled.img`
   width: 8rem;
-  height: 2rem;
+  height: 3rem;
   object-fit: cover;
 `;
