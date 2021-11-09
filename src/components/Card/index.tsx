@@ -7,10 +7,10 @@ import { IoLogoInstagram } from "react-icons/io";
 import { Container } from "./styles";
 
 interface CardProps {
-  picture: string;
+  picture?: string;
   name: string;
-  insta: string;
-  description: string;
+  insta?: string;
+  description?: string;
   pix: string;
   style?: Object;
   isOpen?: boolean;
@@ -21,7 +21,7 @@ export function Card({
   insta,
   description,
   pix,
-  picture,
+  picture = "https://sug4rpix.s3.us-east-2.amazonaws.com/barbie.jpeg",
   style = {},
   isOpen = false,
 }: CardProps) {
@@ -55,16 +55,20 @@ export function Card({
             />{" "}
             {pix}
           </p>
-          <a
-            href={`https://instagram.com/${insta}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IoLogoInstagram color="#7d1ba6" id="insta" size={20} /> @{insta}
-          </a>
-          <button type="button" onClick={() => setShowBio(!showBio)}>
-            {showBio ? "Ver Menos" : "Ver Mais"}
-          </button>
+          {insta && (
+            <a
+              href={`https://instagram.com/${insta}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IoLogoInstagram color="#7d1ba6" id="insta" size={20} /> @{insta}
+            </a>
+          )}
+          {description && (
+            <button type="button" onClick={() => setShowBio(!showBio)}>
+              {showBio ? "Ver Menos" : "Ver Mais"}
+            </button>
+          )}
         </div>
       </div>
       <p className="bio" style={{ fontSize: showBio ? "0.75rem" : 0 }}>

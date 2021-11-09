@@ -17,6 +17,7 @@ export function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
             <Nav.Link href="/signup">Cadastrar Meu Pix</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link eventKey={2} href="/about">
               Sobre
             </Nav.Link>
