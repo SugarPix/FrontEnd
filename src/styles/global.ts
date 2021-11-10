@@ -82,10 +82,28 @@ export default createGlobalStyle`
 export const Page = styled.div`
   width: 90%;
   max-width: 750px;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   padding-bottom: 7.5rem;
+
+  main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

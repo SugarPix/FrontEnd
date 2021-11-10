@@ -7,9 +7,9 @@ import { IoLogoInstagram } from "react-icons/io";
 import { Container } from "./styles";
 
 interface CardProps {
-  picture?: string;
+  image?: string;
   name: string;
-  insta?: string;
+  instagram?: string;
   description?: string;
   pix: string;
   style?: Object;
@@ -18,10 +18,10 @@ interface CardProps {
 
 export function Card({
   name,
-  insta,
+  instagram,
   description,
   pix,
-  picture = "https://sug4rpix.s3.us-east-2.amazonaws.com/barbie.jpeg",
+  image,
   style = {},
   isOpen = false,
 }: CardProps) {
@@ -32,7 +32,14 @@ export function Card({
       style={{ paddingBottom: showBio ? "2.5rem" : "0.75rem", ...style }}
     >
       <div className="pix-header">
-        <img src={picture} alt={name} />
+        <img
+          src={
+            !image || image === ""
+              ? "https://sug4rpix.s3.us-east-2.amazonaws.com/barbie.jpeg"
+              : image
+          }
+          alt={name}
+        />
         <div>
           <h3>{name}</h3>
           <p
@@ -55,13 +62,14 @@ export function Card({
             />{" "}
             {pix}
           </p>
-          {insta && (
+          {instagram && (
             <a
-              href={`https://instagram.com/${insta}`}
+              href={`https://instagram.com/${instagram}`}
               target="_blank"
               rel="noreferrer"
             >
-              <IoLogoInstagram color="#7d1ba6" id="insta" size={20} /> @{insta}
+              <IoLogoInstagram color="#7d1ba6" id="insta" size={20} /> @
+              {instagram}
             </a>
           )}
           {description && (

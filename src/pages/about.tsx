@@ -43,9 +43,9 @@ export default function About(): JSX.Element {
       </AboutMain>
       <Card
         name="sugarpix"
-        insta="sug4rpix"
+        instagram="sug4rpix"
         pix="sug4rpix@gmail.com"
-        picture="https://sug4rpix.s3.us-east-2.amazonaws.com/nome.jpeg"
+        image="https://sug4rpix.s3.us-east-2.amazonaws.com/nome.jpeg"
         description="Somos uma equipe independente de dois desenvolvedores e um designer. Amigos que no seu tempo livre gostam de colocar em prática seus estudos e ideias."
         style={{ marginTop: "2rem" }}
         isOpen
