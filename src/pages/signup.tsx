@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { toast } from "react-toastify";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -7,6 +8,7 @@ import { FaUpload } from "react-icons/fa";
 import { MdCheckCircle } from "react-icons/md";
 import { useS3Upload } from "next-s3-upload";
 
+import { Header } from "../components/Header";
 import { Page } from "../styles/global";
 import { Form, SignupMain } from "../styles/signup";
 
@@ -18,6 +20,7 @@ import { api } from "../services/api";
  */
 
 export default function Signup(): JSX.Element {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [insta, setInsta] = useState("");
   const [pix, setPix] = useState("");
@@ -66,6 +69,8 @@ export default function Signup(): JSX.Element {
         isLoading: false,
         autoClose: 3500,
       });
+
+      setTimeout(() => router.push("/login"), 3500);
     } catch (err) {
       toast.update(id, {
         render: "Erro na criação do seu BabyPix.",
@@ -87,6 +92,7 @@ export default function Signup(): JSX.Element {
 
     if (!emailRegex.test(email)) {
       toast.error("Favor inserir um endereço de email válido.");
+      return;
     }
 
     handleSubmit();
@@ -97,6 +103,7 @@ export default function Signup(): JSX.Element {
       <Head>
         <title>Cadastro | SugarPix</title>
       </Head>
+      <Header />
       <SignupMain>
         <h1>
           Crie o seu <b>BabyPix</b>

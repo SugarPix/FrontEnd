@@ -4,6 +4,8 @@ import Lottie from "react-lottie";
 
 import { LoadingContainer, Page } from "../styles/global";
 import { Card } from "../components/Card";
+import { Header } from "../components/Header";
+
 import { api } from "../services/api";
 
 import loadingJson from "../assets/loading.json";
@@ -31,6 +33,7 @@ export default function Home(): JSX.Element {
       <Head>
         <title>Home | SugarPix</title>
       </Head>
+      <Header />
       <main>
         {cards?.length ? (
           <>

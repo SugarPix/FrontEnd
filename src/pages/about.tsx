@@ -4,6 +4,7 @@ import { Page } from "../styles/global";
 import { AboutMain } from "../styles/about";
 
 import { Card } from "../components/Card";
+import { Header } from "../components/Header";
 
 /**
  * About Page
@@ -16,6 +17,7 @@ export default function About(): JSX.Element {
       <Head>
         <title>Sobre | SugarPix</title>
       </Head>
+      <Header />
       <AboutMain>
         <h1>
           Sobre o sugar<b style={{ fontWeight: 600 }}>pix</b>

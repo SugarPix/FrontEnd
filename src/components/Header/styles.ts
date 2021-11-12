@@ -14,7 +14,7 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
 
-    width: 90%;
+    width: 100%;
     max-width: 750px;
     padding: 2rem 0;
 
@@ -37,7 +37,11 @@ export const Container = styled.header`
         margin-top: 2vw;
       }
 
-      .navbar-nav a {
+      .navbar-nav a:first-child {
+        margin-top: 1vw;
+      }
+
+      .navbar-nav a + a {
         margin-top: 3vw;
       }
     }
