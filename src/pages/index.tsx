@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Lottie from "react-lottie";
+import { toast } from "react-toastify";
 
 import { LoadingContainer, Page } from "../styles/global";
 import { Card } from "../components/Card";
@@ -20,9 +21,13 @@ export default function Home(): JSX.Element {
 
   React.useEffect(() => {
     async function getUsers() {
-      const { data } = await api.get("user");
+      try {
+        const { data } = await api.get("user");
 
-      setCards(data);
+        setCards(data);
+      } catch {
+        toast.error("Houve algum erro na busca pelas babies :/");
+      }
     }
 
     getUsers();

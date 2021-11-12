@@ -44,9 +44,13 @@ export default createGlobalStyle`
   }
 
   .Toastify__toast-theme--light {
-    background-color: var(--green);
+    background-color: white;
     opacity: 0.6;
     transition: opacity 0.4s;
+
+    * {
+      color: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .Toastify__toast--success {
