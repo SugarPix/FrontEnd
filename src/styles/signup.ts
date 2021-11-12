@@ -79,7 +79,6 @@ export const Form = styled.form`
     font-size: 1.5rem;
     padding: 0.8rem 0;
     text-align: center;
-    transition: transform 0.4s, background 0.4s;
     max-width: 400px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
       rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -88,10 +87,6 @@ export const Form = styled.form`
 
   button:hover {
     transform: scale(1.1, 1.1);
-  }
-
-  button:focus {
-    background: #34cb79;
   }
 
   input[type="file"] {

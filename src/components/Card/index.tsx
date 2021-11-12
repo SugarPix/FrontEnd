@@ -34,9 +34,7 @@ export function Card({
       <div className="pix-header">
         <img
           src={
-            !image || image === ""
-              ? "https://sug4rpix.s3.us-east-2.amazonaws.com/barbie.jpeg"
-              : image
+            !image || image === "" ? "/static/images/placeholder.jpeg" : image
           }
           alt={name}
         />
