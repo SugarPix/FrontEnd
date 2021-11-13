@@ -10,7 +10,7 @@ export function Header() {
   return (
     <Container>
       <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <Logo
             src="/static/images/logo_nome.svg"
             className="logoImg"
@@ -25,7 +25,7 @@ export function Header() {
             ) : (
               <>
                 <Nav.Link href="/signup">Cadastrar Meu Pix</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/">Login</Nav.Link>
               </>
             )}
             <Nav.Link eventKey={2} href="/about">
