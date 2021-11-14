@@ -32,6 +32,7 @@ export const Form = styled.form`
   textarea {
     background: white;
     border-radius: 0.2rem;
+    font-size: 0.9rem;
     color: black;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;

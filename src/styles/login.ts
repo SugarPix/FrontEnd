@@ -60,7 +60,7 @@ export const LoginMain = styled.main`
         transition: box-shadow 0.4s;
 
         padding: 0.5rem;
-        padding-left: 2.5rem;
+        padding-left: 2.15rem;
 
         &::placeholder {
           color: rgba(0, 0, 0, 0.6);
@@ -78,16 +78,13 @@ export const LoginMain = styled.main`
     .input-wrapper {
       position: relative;
 
-      svg {
+      img {
         position: absolute;
+        width: 18px;
 
         top: 50%;
         transform: translateY(-50%);
-        margin-left: 14px;
-
-        * {
-          color: black;
-        }
+        margin-left: 12px;
       }
     }
 
@@ -134,12 +131,14 @@ export const LoginMain = styled.main`
       align-items: center;
       justify-content: center;
 
-      color: black;
-      background-color: var(--green);
+      color: var(--green);
+      background-color: transparent;
+      cursor: pointer;
+      border: 2px solid var(--green);
+      font-weight: 500;
 
       width: 50%;
       border-radius: 0.4rem;
-      border: 0;
       padding: 0.5rem 0.25rem;
 
       font-size: 0.85rem;
@@ -151,7 +150,7 @@ export const LoginMain = styled.main`
         margin-right: 0.25rem;
 
         * {
-          color: black;
+          color: var(--green);
         }
       }
     }
@@ -175,6 +174,7 @@ export const LoginMain = styled.main`
       color: black;
       font-weight: 300;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
 
     a {
@@ -193,6 +193,36 @@ export const LoginMain = styled.main`
 
       &:hover {
         transform: scale(1.1, 1.1);
+      }
+    }
+  }
+
+  div.no-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 1rem;
+
+    * {
+      color: black;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+
+    a {
+      color: var(--purple);
+      font-size: 1rem;
+      border-bottom: 1px solid var(--purple);
+      transition: filter 0.4s;
+
+      &:hover {
+        filter: brightness(0.8);
       }
     }
   }
@@ -219,23 +249,31 @@ export const LoginMain = styled.main`
     }
 
     div.signup {
-      position: absolute;
-      width: 30vw;
-      max-width: 300px;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-top: 5rem;
 
+      a {
+        max-width: 250px;
+        background-color: var(--green);
+      }
+    }
+
+    div.no-login {
+      margin: 0;
+      position: absolute;
       top: 5vh;
       right: 5vw;
 
       p {
-        color: white;
-        font-size: 1.15rem;
+        display: none;
       }
 
       a {
-        background-color: var(--green);
-        font-weight: 700;
-        font-size: 1.15rem;
-        letter-spacing: 0.5px;
+        color: white;
+        border-bottom: 1px solid white;
+        font-size: 1.25rem;
       }
     }
   }

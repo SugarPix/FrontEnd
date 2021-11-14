@@ -2,8 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { CgLogIn, CgLock } from "react-icons/cg";
-import { MdMailOutline } from "react-icons/md";
+import { CgLogIn } from "react-icons/cg";
 import { toast } from "react-toastify";
 import Lottie from "react-lottie";
 import { useAuth } from "../hooks/auth";
@@ -83,7 +82,7 @@ export default function Login(): JSX.Element {
         <form className="login-container">
           <label htmlFor="email">email</label>
           <div className="input-wrapper">
-            <MdMailOutline size={20} />
+            <img src="/static/images/mail.svg" alt="Envelope, email" />
             <input
               name="email"
               type="text"
@@ -94,7 +93,7 @@ export default function Login(): JSX.Element {
           </div>
           <label htmlFor="password">senha</label>
           <div className="input-wrapper">
-            <CgLock size={20} />
+            <img src="/static/images/lock.svg" alt="Cadeado" />
             <input
               name="password"
               type="password"
@@ -159,6 +158,11 @@ export default function Login(): JSX.Element {
         <div className="signup">
           <p>ainda não tem uma conta?</p>
           <Link href="/signup">crie seu BabyPix</Link>
+        </div>
+
+        <div className="no-login">
+          <p>ou</p>
+          <a href="home">continue sem login</a>
         </div>
       </LoginMain>
       <Background src="/static/images/login.png" alt="Usuária de BabyPix" />
