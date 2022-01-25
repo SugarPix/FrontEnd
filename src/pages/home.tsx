@@ -1,13 +1,15 @@
 import React from "react";
 import Head from "next/head";
 import Lottie from "react-lottie";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 import { LoadingContainer, Page } from "../styles/global";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 
 import { api } from "../services/api";
+
+import { Main } from "../styles/home";
 
 import loadingJson from "../assets/loading.json";
 
@@ -18,6 +20,7 @@ import loadingJson from "../assets/loading.json";
 
 export default function Home(): JSX.Element {
   const [cards, setCards] = React.useState([]);
+  const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function getUsers() {
@@ -25,8 +28,11 @@ export default function Home(): JSX.Element {
         const { data } = await api.get("user");
 
         setCards(data);
+        setLoading(false);
       } catch {
-        toast.error("Houve algum erro na busca pelas babies :/");
+        // toast.error("Houve algum erro na busca pelas babies :/");
+        setCards([]);
+        setLoading(false);
       }
     }
 
@@ -39,12 +45,18 @@ export default function Home(): JSX.Element {
         <title>Home | SugarPix</title>
       </Head>
       <Header />
-      <main>
-        {cards?.length ? (
+      <Main>
+        {!isLoading ? (
           <>
-            {cards.map((card) => {
-              return <Card {...card} key={card.id} />;
-            })}
+            {cards?.length ? (
+              <>
+                {cards.map((card) => {
+                  return <Card {...card} key={card.id} />;
+                })}
+              </>
+            ) : (
+              <p>Não encontramos nenhuma baby cadastrada.</p>
+            )}
           </>
         ) : (
           <LoadingContainer>
@@ -63,7 +75,7 @@ export default function Home(): JSX.Element {
             />
           </LoadingContainer>
         )}
-      </main>
+      </Main>
     </Page>
   );
 }
